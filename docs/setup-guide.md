@@ -1,6 +1,9 @@
 # My Personel Setup
+
 ## VBOX image and setting
-Download Oracle Virtual Box and install ubuntu
+Download [Oracle Virtual Box](https://www.virtualbox.org/wiki/Downloads) according to your host Operating System
+
+Download the latest [Ubuntu](https://ubuntu.com/download/desktop) LTS version
 
 Host Machine Specs:
 - Processor: AMD Rysen 7 3700X 8-Core Processor (3.60 GHz)
