@@ -53,3 +53,27 @@ Virtual OpenFlow-capable switching layer.
 
 Purpose:
 OpenFlow packet inspection and traffic analysis.
+
+| Package              | Keep?    | Purpose                                    |
+| -------------------- | -------- | ------------------------------------------ |
+| `build-essential`    | Yes      | Compile native dependencies/tools          |
+| `curl`               | Yes      | REST API testing against OpenDaylight      |
+| `git`                | Yes      | Version control                            |
+| `maven`              | Yes      | Java/OpenDaylight builds                   |
+| `mininet`            | Yes      | SDN topology emulation                     |
+| `net-tools`          | Optional | Legacy networking tools (`ifconfig`, etc.) |
+| `openjdk-21-jdk`     | Yes      | Required for Titanium-SR2                  |
+| `openvswitch-switch` | Yes      | OpenFlow-capable virtual switching         |
+| `python3`            | Yes      | Automation/testing scripts                 |
+| `python3-pip`        | Yes      | Python package management                  |
+| `tcpdump`            | Yes      | Packet inspection/debugging                |
+| `vim`                | Optional | Terminal editing                           |
+| `wireshark`          | Yes      | OpenFlow + traffic analysis                |
+
+| Package | Purpose                       |
+| ------- | ----------------------------- |
+| `wget`  | Download ODL distributions    |
+| `unzip` | Archive extraction            |
+| `jq`    | Parse JSON RESTCONF responses |
+
+python3-venv
