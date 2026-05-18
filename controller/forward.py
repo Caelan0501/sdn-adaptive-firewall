@@ -6,7 +6,7 @@ ODL = "http://127.0.0.1:8181/rests/data"
 AUTH = HTTPBasicAuth('admin', 'admin')
 
 def install_flow(node_id, flow_id="1"):
-    url = f"{ODL}/flow-node-inventory:nodes/node/{node_id}/table/0/flow/{flow_id}"
+    url = f"{ODL}/flow-node-inventory:nodes/node={node_id}/table=0/flow={flow_id}"
 
     flow = {
         "flow": [{
