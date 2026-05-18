@@ -2,11 +2,11 @@ import requests
 from requests.auth import HTTPBasicAuth
 import json
 
-ODL = "http://127.0.0.1:8181/restconf/config"
+ODL = "http://127.0.0.1:8181/rests/data"
 AUTH = HTTPBasicAuth('admin', 'admin')
 
 def install_flow(node_id, flow_id="1"):
-    url = ODL + f"{ODL}/opendaylight-inventory:nodes/node/{node_id}/table/0/flow/{flow_id}"
+    url = f"{ODL}/opendaylight-inventory:nodes/node/{node_id}/table/0/flow/{flow_id}"
 
     flow = {
         "flow": [{
@@ -15,7 +15,7 @@ def install_flow(node_id, flow_id="1"):
             "table_id": 0,
             "match": {},
             "instructions": {
-                "instruction:": [{
+                "instruction": [{
                     "order": 0,
                     "apply-actions": {
                         "action": [{
@@ -31,7 +31,7 @@ def install_flow(node_id, flow_id="1"):
     }
 
     headers = {"Content-Type": "application/json"}
-    r = requests.post(url, auth=AUTH, data=json.dumps(flow), headers=headers)
+    r = requests.put(url, auth=AUTH, data=json.dumps(flow), headers=headers)
 
     print("Status:", r.status_code)
     print(r.text)
