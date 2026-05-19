@@ -5,14 +5,13 @@ import json
 ODL = "http://127.0.0.1:8181/rests/data"
 AUTH = HTTPBasicAuth('admin', 'admin')
 
-def install_flow(node_id, flow_id="1"):
-    url = f"{ODL}/opendaylight-inventory:nodes/node={node_id}/flow-node-inventory:table=0/flow-node-inventory:flow={flow_id}"
-
+def install_forward_flow(node_id, table_id="0", flow_id="1"):
+    url = f"{ODL}/opendaylight-inventory:nodes/node={node_id}/flow-node-inventory:table={table_id}/flow-node-inventory:flow={flow_id}"
     flow = {
         "flow": [{
             "id": flow_id,
             "priority": 500,
-            "table_id": 0,
+            "table_id": table_id,
             "match": {},
             "instructions": {
                 "instruction": [{
@@ -37,4 +36,4 @@ def install_flow(node_id, flow_id="1"):
     print(r.text)
 
 if __name__ == '__main__':
-    install_flow("openflow:1")
+    install_forward_flow("openflow:1")

@@ -1,0 +1,10 @@
+odl:
+  host: 127.0.0.1
+  port: 8181
+  username: admin
+  password: admin
+
+controller:
+  port: 6633
+  retry_interval: 3
+  max_retries: 20
